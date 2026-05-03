@@ -1,0 +1,31 @@
+<!-- Hero Section -->
+<section class="relative overflow-clip">
+    <!-- Banner Image -->
+    <img src="/images/banners/homepage-banner.png" alt="Banner" class="w-full h-96 md:h-[640px] object-cover object-center" width="1440"
+        height="640" />
+
+    <!-- Content -->
+    <div class="w-full md:absolute md:top-0 md:left-1/2 md:-translate-x-1/2 md:container">
+        <div class="bg-dark-brown h-96 md:h-[640px] w-full md:w-[420px] gap-y-7 md:gap-y-[42px] flex flex-col justify-center items-center">
+            <img src="/svgs/logo-half.svg" alt="Moon" width="80" height="80" class="size-12 md:size-20 mb-0"/>
+            
+            <div class="md:max-w-2xs px-5 space-y-5 text-custom-white text-center">
+                <p class="paragraph-default">Handcrafted in Viet Nam since 1650</p>
+                <h1 class="display-8 uppercase text-custom-white">Bat Trang Dinner Set</h1>
+            </div>
+
+            <button class="w-full bg-white paragraph-medium uppercase h-10 max-w-[220px] text-dark-brown font-semibold cursor-pointer hover:opacity-90 transition-opacity">Shop Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Categories Section -->
+<section class="container py-8 md:py-20 flex gap-[30px] overflow-x-scroll">
+        @for (category of categories; track category.name) {
+            <div class="space-y-[23px] min-w-fit">
+                <img [src]="category.image" [alt]="category.name" width="255" height="255" class="size-[255px]" />
+                <p class="paragraph-large uppercase text-center tracking-[6%] font-semibold">{{ category.name }}</p>
+            </div>
+        }
+</section>
+

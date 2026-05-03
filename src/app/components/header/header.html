@@ -1,0 +1,32 @@
+<header class="min-h-full py-5 max-h-20 border-b border-neutral-400">
+    <nav class="flex justify-between items-center container">
+        <button class="md:hidden">
+            <img src="/icons/menu.svg" alt="Menu" />
+        </button>
+
+        <a routerLink="/">
+            <img [src]="logo" width="145" height="40" alt="Moon" class="cursor-pointer w-32 lg:w-36" priority
+                fill="false" />
+        </a>
+
+        <ul class="hidden md:flex gap-12 lg:gap-[60px] items-center paragraph-medium">
+            @for (link of links; track link.path) {
+            <li>
+                <a [routerLink]="link.path" routerLinkActive="text-light-brown"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    class="transition-colors duration-300 hover:text-light-brown">{{ link.label }}</a>
+            </li>
+            }
+        </ul>
+
+        <ul class="hidden md:flex gap-6 items-center">
+            @for (icon of icons; track icon.name) {
+            <li>
+                <img [src]="icon.path" [alt]="icon.name" class="cursor-pointer" />
+            </li>
+            }
+        </ul>
+
+        <img src="/icons/shopping-cart.svg" alt="Shopping Cart" class="cursor-pointer md:hidden" />
+    </nav>
+</header>

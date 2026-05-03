@@ -10,6 +10,7 @@
     --color-beige-peach: #F7CCAC;
     --color-light-brown: #C69B7B;
     --color-dark-brown: #826F66;
+    --color-custom-white: #FFFDFB;
 
     /* Neutral Colors */
     --color-neutral-800: #3A3845;
@@ -23,7 +24,6 @@
 }
 
 @layer base {
-
     h1,
     h2,
     h3,
@@ -31,11 +31,17 @@
     h5,
     h6 {
         font-family: var(--font-serif);
+        color: var(--color-warm-black);
     }
 
     body {
         font-family: var(--font-sans);
+        color: var(--color-warm-black);
     }
+}
+
+@utility container {
+    @apply max-w-6xl mx-auto px-5;
 }
 
 /* Display Typography */
