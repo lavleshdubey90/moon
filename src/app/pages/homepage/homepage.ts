@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Discount } from '../../components/shared/discount/discount';
 
 @Component({
   selector: 'app-homepage',
-  imports: [],
+  imports: [Discount],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css',
 })

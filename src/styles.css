@@ -69,28 +69,27 @@
     @apply text-3xl leading-9 font-semibold;
 }
 
-/* Heading Typography */
-@utility heading-6 {
+@utility display-6 {
     @apply text-2xl leading-8 font-semibold;
 }
 
-@utility heading-5 {
+@utility display-5 {
     @apply text-xl leading-7 font-semibold;
 }
 
-@utility heading-4 {
+@utility display-4 {
     @apply text-lg leading-6 font-semibold;
 }
 
-@utility heading-3 {
+@utility display-3 {
     @apply text-base leading-[22px] font-semibold;
 }
 
-@utility heading-2 {
+@utility display-2 {
     @apply text-sm leading-5 font-medium;
 }
 
-@utility heading-1 {
+@utility display-1 {
     @apply text-xs leading-[18px] font-medium;
 }
 
@@ -100,7 +99,7 @@
 }
 
 @utility paragraph-medium {
-    @apply text-sm leading-6 font-normal;
+    @apply text-base leading-6 font-normal;
 }
 
 @utility paragraph-default {
