@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Discount } from './discount';
+import { Discount } from './brand-story';
 
 describe('Discount', () => {
   let component: Discount;

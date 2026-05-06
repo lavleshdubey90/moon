@@ -33,14 +33,36 @@
 </section>
 
 <!-- Discount Section -->
-<app-discount></app-discount>
+<app-brand-story [brandStory]="discount"></app-brand-story>
 
 <!-- Best Sellers Section -->
 <section class="container py-10 md:py-20">
     <h2 class="display-7 font-bold uppercase text-center mb-12">Best Sellers</h2>
-    <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2.5 sm:gap-x-[30px] gap-y-12 sm:gap-y-10">
+    <div
+        class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2.5 sm:gap-x-[30px] gap-y-12 sm:gap-y-10">
         @for (product of bestSellers; track product.name) {
         <app-product-card [product]="product"></app-product-card>
         }
     </div>
+</section>
+
+<!-- Brand Story Section -->
+<app-brand-story [brandStory]="origin"></app-brand-story>
+<app-brand-story [brandStory]="ourHistory"></app-brand-story>
+
+<!-- New Arrivals Section -->
+<section class="container py-10 md:py-20">
+    <h2 class="display-7 font-bold uppercase text-center mb-12">Discover New Arrivals</h2>
+    <div
+        class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2.5 sm:gap-x-[30px] gap-y-12 sm:gap-y-10">
+        @for (product of newArrivals; track product.name) {
+        <app-product-card [product]="product"></app-product-card>
+        }
+    </div>
+</section>
+
+<!-- Our Blog Section -->
+<section class="md:py-0 py-[30px]">
+    <h2 class="display-7 font-bold uppercase text-center mb-12">Our Blog</h2>
+    <app-brand-story [brandStory]="ourBlog" [reverse]="true"></app-brand-story>
 </section>
