@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { BrandStory, BrandStoryBanner } from '../../components/shared/brand-story/brand-story';
 import { ProductCard } from '../../components/shared/product-card/product-card';
+import { Newsletter } from '../../components/shared/newsletter/newsletter';
 
 @Component({
   selector: 'app-homepage',
-  imports: [BrandStory, ProductCard],
+  imports: [BrandStory, ProductCard, Newsletter],
   templateUrl: './homepage.html',
   styleUrl: './homepage.css',
 })
