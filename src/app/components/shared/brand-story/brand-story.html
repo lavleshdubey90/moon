@@ -5,9 +5,9 @@
         <p class="display-4 tracking-[6%] font-semibold uppercase text-neutral-600">{{ brandStory.caption }}</p>
         <h3 class="font-bold text-[28px] leading-8 tracking-[4%] uppercase">{{ brandStory.title }}</h3>
         <p class="paragraph-medium text-neutral-700 max-w-sm">{{ brandStory.description }}</p>
-        <a [routerLink]="brandStory.link.url"
+        <a [routerLink]="brandStory.link?.url"
             class="inline-block w-[120px] font-bold text-sm tracking-[6%] uppercase underline underline-offset-4 cursor-pointer hover:text-dark-brown duration-300 mt-4">
-            {{ brandStory.link.text }}
+            {{ brandStory.link?.text }}
         </a>
     </div>
     <img [src]="brandStory.image" [alt]="brandStory.alt" width="500" height="348"

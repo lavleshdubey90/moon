@@ -7,7 +7,7 @@ export interface BrandStoryBanner {
   caption?: string;
   description: string;
   image: string;
-  link: {
+  link?: {
     url: string;
     text: string;
   };

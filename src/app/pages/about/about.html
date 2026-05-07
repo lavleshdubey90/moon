@@ -1,1 +1,59 @@
-<p>about works!</p>
+<!-- About Page Herosection -->
+<section class="container py-16 space-y-6 text-center">
+    <h1 class="display-7 font-bold uppercase text-neutral-800">About Moon</h1>
+    <p class="paragraph-default text-neutral-700 max-w-sm sm:px-0 px-4 mx-auto">Moon's handmade ceramic products have
+        been around since 1650, let's explore our journey</p>
+</section>
+
+<!-- History Section -->
+<app-brand-story [brandStory]="history1910" [reverse]="true"></app-brand-story>
+<app-brand-story [brandStory]="origin" [reverse]="true"></app-brand-story>
+<app-brand-story [brandStory]="origin2010" [reverse]="true"></app-brand-story>
+
+<!-- How we works -->
+<section class="flex pt-12 md:pt-20 h-fit flex-col-reverse place-content-center md:container md:flex-row-reverse">
+    <div class="md:w-1/2 bg-neutral-200 text-neutral-800 py-9 lg:py-12 px-5 md:px-8 lg:px-[60px] flex flex-col gap-4">
+        <h3 class="display-6 text-[28px] font-bold tracking-[4%] uppercase">How we works</h3>
+        <!-- Product Design -->
+        <div class="space-y-2">
+            <p class="paragraph-large font-semibold">Product Design</p>
+            <p class="paragraph-medium text-neutral-700">Lorem ipsum dolor sit amet consectetur adipiscing eli mattis
+                sit phasellus mollis.</p>
+        </div>
+        <!-- Crafted -->
+        <div class="space-y-2">
+            <p class="paragraph-large font-semibold">Crafted</p>
+            <p class="paragraph-medium text-neutral-700">Rutrum vitae risus eget, vulputate aliquam nisi ex gravida
+                neque tempus.</p>
+        </div>
+        <!-- Sell product -->
+        <div class="space-y-2">
+            <p class="paragraph-large font-semibold">Sell product</p>
+            <p class="paragraph-medium text-neutral-700">Maecenas sem eros, rutrum vitae risus eget, vulputate aliquam
+                nisi.</p>
+        </div>
+    </div>
+    <img src="/images/banners/plate-crafting.png" alt="Plate Crafting" width="500" height="348"
+        class="md:w-1/2 w-full min-h-full md:max-h-full max-h-[300px] object-cover" />
+</section>
+
+<!-- Our Team -->
+<section class="py-9 pb-12 md:py-20">
+    <h2 class="display-8 font-bold uppercase text-center mb-12">Meet Our Team</h2>
+    <!-- Categories Section -->
+    <section class="container flex gap-[30px] overflow-x-scroll">
+        @for (teamMember of teamMembers; track teamMember.name) {
+        <div class="space-y-[23px] min-w-fit">
+            <img [src]="teamMember.image" [alt]="teamMember.name" width="255" height="255" class="w-[255px] h-auto" />
+            <div>
+                <p class="paragraph-large uppercase text-center tracking-[6%] font-semibold text-neutral-800">{{
+                    teamMember.name }}</p>
+                <p class="text-center text-neutral-600">{{ teamMember.designation }}</p>
+            </div>
+        </div>
+        }
+    </section>
+</section>
+
+<!-- Newsletter Section -->
+<app-newsletter></app-newsletter>
