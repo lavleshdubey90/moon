@@ -1,0 +1,61 @@
+<footer class="bg-warm-black">
+    <div class="container md:border-b lg:px-20 border-neutral-400 flex flex-col md:flex-row gap-[30px] md:gap-16 lg:gap-20">
+
+        <!-- Left section -->
+        <div class="pt-8 md:pt-12 max-w-[300px] space-y-8">
+            <!-- Image with text -->
+            <div class="space-y-6">
+                <img src="/svgs/logo.svg" alt="Moon" width="145" height="40" class="invert" />
+                <p class="paragraph-default text-neutral-300">Lorem ipsum dolor sit amet consectetur adipiscing elit
+                    aliquam mauris sed ma</p>
+            </div>
+            <button
+                class="border border-neutral-100 w-36 text-neutral-100 uppercase tracking-[8%] display-1 cursor-pointer hover:text-neutral-800 duration-500 hover:bg-neutral-100 font-semibold h-10">Get
+                Started</button>
+        </div>
+
+        <!-- Seperator -->
+        <div class="md:w-px bg-neutral-400 md:h-80 w-full h-px"></div>
+        
+
+        <!-- Right section -->
+        <div class="md:pt-12 min-w-fit">
+            <nav class="md:pt-2.5 flex flex-wrap gap-12 lg:gap-[72px] justify-between">
+                <!-- About Us Links -->
+                <div class="w-fit flex flex-col gap-y-5">
+                    <p class="paragraph-medium uppercase tracking-[6%] text-neutral-100 font-semibold">About Us</p>
+                    <ul class="space-y-3 text-neutral-300 paragraph-default">
+                        @for (link of aboutUsLinks; track link.label) {
+                        <li><a href="{{ link.link }}">{{ link.label }}</a></li>
+                        }
+                    </ul>
+                </div>
+                <!-- Services Links -->
+                <div class="w-fit flex flex-col gap-y-5">
+                    <p class="paragraph-medium uppercase tracking-[6%] text-neutral-100 font-semibold">Services</p>
+                    <ul class="space-y-3 text-neutral-300 paragraph-default">
+                        @for (link of servicesLinks; track link.label) {
+                        <li><a href="{{ link.link }}">{{ link.label }}</a></li>
+                        }
+                    </ul>
+                </div>
+                <!-- Contact Links -->
+                <div class="w-fit flex flex-col gap-y-5">
+                    <p class="paragraph-medium uppercase tracking-[6%] text-neutral-100 font-semibold">Contact</p>
+                    <ul class="space-y-3 text-neutral-300 paragraph-default">
+                        @for (link of portfolioLinks; track link.label) {
+                        <li><a href="{{ link.link }}">{{ link.label }}</a></li>
+                        }
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+        <!-- Seperator (visible only on mobile) -->
+        <div class="bg-neutral-400 w-full h-px md:hidden"></div>
+    </div>
+    <p class="p-8 text-center text-neutral-500">
+        Copyright &copy; {{ currentYear }} Moon. | All rights reserved. | <a href="#">Terms and Conditions</a> | <a
+            href="#">Privacy Policy</a>
+    </p>
+</footer>
