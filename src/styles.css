@@ -113,6 +113,14 @@
     @apply text-xs leading-[18px] font-normal;
 }
 
+@utility btn {
+    @apply w-full uppercase tracking-[8%] display-1 cursor-pointer duration-500 bg-warm-black hover:bg-neutral-800/90 text-neutral-100 font-semibold h-10;
+}
+
 @utility btn-outline {
     @apply border border-neutral-800 w-full uppercase tracking-[8%] display-1 cursor-pointer hover:bg-dark-brown hover:text-custom-white duration-500 hover:border-dark-brown font-semibold h-10;
+}
+
+@utility input {
+    @apply border border-neutral-800 h-[52px] p-4;
 }

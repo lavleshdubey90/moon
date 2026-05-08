@@ -1,0 +1,86 @@
+<form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()" class="grid grid-cols-1 sm:grid-cols-2 gap-y-[30px] gap-x-5">
+    <div class="flex flex-col gap-y-2">
+        <label for="name" class="font-semibold">Name</label>
+        <input type="text" id="name" name="name" placeholder="Samatha Clarken" class="input" formControlName="name">
+        @if (contactUsForm.get('name')?.invalid && contactUsForm.get('name')?.touched) {
+            <div class="text-red-500 text-sm mt-1">
+                @if (contactUsForm.get('name')?.hasError('required')) {
+                    <span>Name is required</span>
+                }
+                @if (contactUsForm.get('name')?.hasError('minlength')) {
+                    <span>Name must be at least 3 characters</span>
+                }
+                @if (contactUsForm.get('name')?.hasError('maxlength')) {
+                    <span>Name cannot exceed 50 characters</span>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="flex flex-col gap-y-2">
+        <label for="email" class="font-semibold">Email</label>
+        <input type="email" id="email" name="email" placeholder="example@youremail.com" class="input" formControlName="email">
+        @if (contactUsForm.get('email')?.invalid && contactUsForm.get('email')?.touched) {
+            <div class="text-red-500 text-sm mt-1">
+                @if (contactUsForm.get('email')?.hasError('required')) {
+                    <span>Email is required</span>
+                }
+                @if (contactUsForm.get('email')?.hasError('email')) {
+                    <span>Please enter a valid email</span>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="flex flex-col gap-y-2">
+        <label for="phone" class="font-semibold">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(123) 456 - 7890" class="input" formControlName="phone">
+        @if (contactUsForm.get('phone')?.invalid && contactUsForm.get('phone')?.touched) {
+            <div class="text-red-500 text-sm mt-1">
+                @if (contactUsForm.get('phone')?.hasError('required')) {
+                    <span>Phone number is required</span>
+                }
+                @if (contactUsForm.get('phone')?.hasError('pattern')) {
+                    <span>Please enter a 10-digit phone number</span>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="flex flex-col gap-y-2">
+        <label for="company" class="font-semibold">Company</label>
+        <input type="text" id="company" name="company" placeholder="Moon" class="input" formControlName="company">
+        @if (contactUsForm.get('company')?.invalid && contactUsForm.get('company')?.touched) {
+            <div class="text-red-500 text-sm mt-1">
+                @if (contactUsForm.get('company')?.hasError('required')) {
+                    <span>Company name is required</span>
+                }
+                @if (contactUsForm.get('company')?.hasError('minlength')) {
+                    <span>Company name must be at least 3 characters</span>
+                }
+                @if (contactUsForm.get('company')?.hasError('maxlength')) {
+                    <span>Company name cannot exceed 50 characters</span>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="flex flex-col gap-y-2 sm:col-span-2">
+        <label for="message" class="font-semibold">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Type your message here..." class="input h-36" formControlName="message"></textarea>
+        @if (contactUsForm.get('message')?.invalid && contactUsForm.get('message')?.touched) {
+            <div class="text-red-500 text-sm mt-1">
+                @if (contactUsForm.get('message')?.hasError('required')) {
+                    <span>Message is required</span>
+                }
+                @if (contactUsForm.get('message')?.hasError('minlength')) {
+                    <span>Message must be at least 10 characters</span>
+                }
+                @if (contactUsForm.get('message')?.hasError('maxlength')) {
+                    <span>Message cannot exceed 2000 characters</span>
+                }
+            </div>
+        }
+    </div>
+    <button type="submit" class="sm:col-span-2 btn disabled:opacity-50 disabled:cursor-not-allowed" [disabled]="contactUsForm.invalid">Send Message</button>
+</form>
