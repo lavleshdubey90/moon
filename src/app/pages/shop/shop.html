@@ -1,1 +1,47 @@
-<p>shop works!</p>
+<section class="container">
+    <app-breadcrumb></app-breadcrumb>
+
+    <div class="mt-12 mb-[60px] flex gap-5">
+        <!-- Product Filters -->
+        <aside class="md:block hidden md:w-48 lg:w-64 pr-5">
+            <app-filters [itemCount]="filteredProducts.length"
+                (filtersChanged)="onFiltersChanged($event)"></app-filters>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="flex-1 flex flex-col gap-7">
+            <!-- Product Filters -->
+            <div
+                class="fixed top-0 {{isFiltersOpen() ? 'left-0' : '-left-full'}} transition-all duration-300 ease-in-out w-60 h-dvh bg-white border-r border-neutral-600 p-5 z-50">
+                <button (click)="isFiltersOpen.set(false)" class="absolute top-5 right-5 cursor-pointer">
+                    <img src="/svgs/close.svg" alt="close">
+                </button>
+                <app-filters [itemCount]="filteredProducts.length"
+                    (filtersChanged)="onFiltersChanged($event)"></app-filters>
+            </div>
+
+            <div class="flex justify-between md:justify-end items-center">
+                <button (click)="isFiltersOpen.set(true)"
+                    class="md:hidden flex items-center gap-2 cursor-pointer uppercase font-medium paragraph-default">
+                    <img src="/svgs/filters.svg" alt="filters">
+                    Filter
+                </button>
+
+                <!-- Sort By -->
+                <p class="paragraph-default text-right">Sort By:
+                    <select class="ml-2 sm:pr-12 cursor-pointer" (change)="onSortChanged($event)">
+                        <option value="name">Name</option>
+                        <option value="price">Price (Low to High)</option>
+                        <option value="price-high">Price (High to Low)</option>
+                        <option value="alpha">A-Z</option>
+                    </select>
+                </p>
+            </div>
+            <div class="grid grid-cols-1 min-[500px]:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
+                @for (product of filteredProducts; track product.id) {
+                <app-product-card [product]="product"></app-product-card>
+                }
+            </div>
+        </div>
+    </div>
+</section>

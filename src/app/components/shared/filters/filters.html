@@ -1,0 +1,52 @@
+<div class="flex flex-1 gap-y-7 flex-col">
+    <p class="paragraph-default">Showing {{ itemCount }} items</p>
+
+    <!-- Seperator -->
+    <div class="h-px w-full bg-neutral-800"></div>
+
+    <!-- Category -->
+    <div class="space-y-4">
+        <p class="paragraph-default font-semibold text-neutral-800">Category</p>
+        <div class="flex flex-col gap-4">
+            @for (category of categories; track category) {
+            <label class="flex items-center gap-3 cursor-pointer paragraph-default">
+                <input type="checkbox" id="{{ category }}" class="size-[18px] cursor-pointer accent-neutral-800" 
+                       (change)="onCategoryChange(category, $event)" />
+                <span>{{ category }}</span>
+            </label>
+            }
+        </div>
+    </div>
+
+    <!-- Seperator -->
+    <div class="h-px w-full bg-neutral-800"></div>
+
+    <!-- Price Range -->
+    <div class="space-y-4">
+        <p class="paragraph-default font-semibold text-neutral-800">Price Range</p>
+        <div class="flex flex-col gap-4">
+            @for (priceRange of priceRanges; track priceRange) {
+            <label class="flex items-center gap-3 cursor-pointer paragraph-default">
+                <input type="checkbox" id="{{ priceRange }}" class="size-[18px] cursor-pointer accent-neutral-800" 
+                       (change)="onPriceRangeChange(priceRange, $event)" />
+                <span>{{ priceRange }}</span>
+            </label>
+            }
+        </div>
+    </div>
+
+    <!-- Seperator -->
+    <div class="h-px w-full bg-neutral-800"></div>
+
+    <!-- Color -->
+    <div class="space-y-4">
+        <p class="paragraph-default font-semibold text-neutral-800">Color</p>
+        <div class="flex gap-4">
+            @for (color of colors; track color) {
+            <div class="flex items-center gap-3 cursor-pointer {{ color === '#FFFFFF' && 'border-2 border-neutral-800' }}">
+                <div [style.background-color]="color" class="size-[18px]"></div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
