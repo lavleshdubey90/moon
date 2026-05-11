@@ -22,11 +22,13 @@
         <ul class="hidden md:flex gap-6 items-center">
             @for (icon of icons; track icon.name) {
             <li>
-                <img [src]="icon.path" [alt]="icon.name" class="cursor-pointer" />
+                <a [href]="icon.url">
+                    <img [src]="icon.path" [alt]="icon.alt" class="cursor-pointer" />
+                </a>
             </li>
             }
         </ul>
-
+        
         <img src="/icons/shopping-cart.svg" alt="Shopping Cart" class="cursor-pointer md:hidden" />
     </nav>
 </header>

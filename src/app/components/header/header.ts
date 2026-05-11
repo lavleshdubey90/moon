@@ -16,9 +16,9 @@ export class Header {
     { label: 'Contact', path: '/contact' },
   ];
   protected readonly icons = [
-    { name: 'search', path: 'icons/search.svg' },
-    { name: 'heart', path: 'icons/heart.svg' },
-    { name: 'shopping-cart', path: 'icons/shopping-cart.svg' },
-    { name: 'avatar', path: 'icons/avatar.svg' },
+    { name: 'search', path: 'icons/search.svg', alt: 'Search', url: '#' },
+    { name: 'heart', path: 'icons/heart.svg', alt: 'Heart', url: '#' },
+    { name: 'shopping-cart', path: 'icons/shopping-cart.svg', alt: 'Shopping Cart', url: '/cart' },
+    { name: 'avatar', path: 'icons/avatar.svg', alt: 'Avatar', url: '#' },
   ];
 }

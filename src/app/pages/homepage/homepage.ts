@@ -36,6 +36,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit.',
       price: 49.00,
       image: '/images/products/product-1.png',
+      slug: 'small-ecru-ceramic-compote',
     },
     {
       id: 2,
@@ -43,6 +44,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.',
       price: 49.00,
       image: '/images/products/product-2.png',
+      slug: 'warrick-white-vase-14',
     },
     {
       id: 3,
@@ -50,6 +52,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur .',
       price: 49.00,
       image: '/images/products/product-3.png',
+      slug: 'porcelain-dinner-plate',
     },
     {
       id: 4,
@@ -57,6 +60,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.',
       price: 49.00,
       image: '/images/products/product-4.png',
+      slug: 'warrick-white-vase-20',
     },
     {
       id: 5,
@@ -64,6 +68,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.',
       price: 49.00,
       image: '/images/products/product-5.png',
+      slug: 'rounded-dual-handled-vase',
     },
     {
       id: 6,
@@ -71,6 +76,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse.',
       price: 49.00,
       image: '/images/products/product-6.png',
+      slug: 'marin-white-dinner-plate',
     },
     {
       id: 7,
@@ -78,6 +84,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit.',
       price: 49.00,
       image: '/images/products/product-7.png',
+      slug: 'tall-cream-ceramic-vase',
     },
     {
       id: 8,
@@ -85,6 +92,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.',
       price: 49.00,
       image: '/images/products/product-8.png',
+      slug: 'luana-bowl',
     },
   ];
 
@@ -119,6 +127,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.',
       price: 49.00,
       image: '/images/products/product-9.png',
+      slug: 'porcelain-dinner-plate-new',
     },
     {
       id: 2,
@@ -126,6 +135,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur.',
       price: 49.00,
       image: '/images/products/product-10.png',
+      slug: 'ophelia-matte-natural-vase',
     },
     {
       id: 3,
@@ -133,6 +143,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse bolli tetur adipiscing elit tortor eu.',
       price: 49.00,
       image: '/images/products/product-11.png',
+      slug: 'porcelain-dinner-plate-variant',
     },
     {
       id: 4,
@@ -140,6 +151,7 @@ export class Homepage {
       description: 'Lorem ipsum dolor sit amet conse.',
       price: 49.00,
       image: '/images/products/product-12.png',
+      slug: 'luana-bowl-new',
     }
   ];
 
