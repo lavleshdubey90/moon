@@ -1,1 +1,83 @@
-<p>product works!</p>
+<section class="container">
+    <app-breadcrumb [items]="breadcrumbItems"></app-breadcrumb>
+
+    <div class="mt-12 flex flex-col md:flex-row gap-10 lg:gap-[60px]">
+        <!-- Product Images -->
+        <div class="w-full md:w-sm lg:w-[535px] flex flex-col gap-8">
+            <img [src]="product?.image" [alt]="product?.name" width="535" height="701" class="mx-auto md:w-full" />
+            <div class="flex gap-2 overflow-x-scroll max-w-lg mx-auto md:max-w-full md:w-full">
+                @for (image of singleProductImages; track $index) {
+                <img [src]="image" [alt]="product?.name" width="100" height="100" />
+                }
+            </div>
+        </div>
+        <!-- Product Details -->
+        <div class="w-full flex flex-1 flex-col gap-12">
+            <!-- Title, Rating and Price -->
+            <div class="space-y-3">
+                <p class="display-5 font-semibold tracking-[6%] uppercase">{{ product?.name }}</p>
+                <div class="flex items-center gap-2">
+                    <img src="svgs/stars.svg" alt="stars" />
+                    <span class="paragraph-default">(1256 Reviews)</span>
+                    <span class="paragraph-default ml-4">Stock: <span class="text-light-brown">In Stock</span></span>
+                </div>
+                <p class="display-6 font-normal">{{ product?.price | currency: 'USD' }} <span
+                        class="text-neutral-400 ml-4">{{(product?.price || 0) / 2 | currency: 'USD'}}</span></p>
+            </div>
+            <!-- Color -->
+            <div class="space-y-3">
+                <span class="paragraph-medium font-semibold block">Color:</span>
+                <div class="flex items-center gap-6">
+                    @for (color of colors; track $index) {
+                    <div [style.background-color]="color" class="size-9"></div>
+                    }
+                </div>
+            </div>
+            <!-- Buttons -->
+            <div class="flex items-center gap-4">
+                <button class="btn">Buy Now</button>
+                <button class="btn-outline">Add to Cart</button>
+            </div>
+            <!-- Social Media Icons -->
+            <div class="space-y-3">
+                <p class="paragraph-medium font-semibold">Share this:</p>
+                <div class="flex items-center gap-4">
+                    <img src="icons/facebook.svg" alt="Facebook" class="w-6 h-6 opacity-50 cursor-pointer" />
+                    <img src="icons/twitter.svg" alt="Twitter" class="w-6 h-6 opacity-50 cursor-pointer" />
+                    <img src="icons/instagram.svg" alt="Instagram" class="w-6 h-6 opacity-50 cursor-pointer" />
+                    <img src="icons/linkedin.svg" alt="LinkedIn" class="w-6 h-6 opacity-50 cursor-pointer" />
+                </div>
+            </div>
+            <!-- Carousals -->
+            <div class="border-t border-neutral-400">
+                <!-- Details -->
+                <div class="h-[60px] flex justify-between items-center border-b border-neutral-400">
+                    <p class="paragraph-medium font-semibold">Details</p>
+                    <img src="icons/plus.svg" alt="plus" class="size-4" />
+                </div>
+                <!-- Dimensions -->
+                <div class="h-[60px] flex justify-between items-center border-b border-neutral-400">
+                    <p class="paragraph-medium font-semibold">Dimensions</p>
+                    <img src="icons/plus.svg" alt="plus" class="size-4" />
+                </div>
+                <!-- Reviews -->
+                <div class="h-[60px] flex justify-between items-center border-b border-neutral-400">
+                    <p class="paragraph-medium font-semibold">Reviews</p>
+                    <img src="icons/plus.svg" alt="plus" class="size-4" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="py-20 space-y-12">
+        <h2 class="display-8 font-bold uppercase">Similar Items</h2>
+        <div class="flex overflow-x-scroll gap-6">
+            @for (product of relatedProducts.slice(0, 4); track product.id) {
+            <div class="min-w-64">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+            }
+        </div>
+    </div>
+</section>

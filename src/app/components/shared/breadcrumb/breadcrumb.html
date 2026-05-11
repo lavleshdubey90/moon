@@ -1,7 +1,16 @@
 <nav class="py-3">
     <ul class="flex items-center gap-2 paragraph-default">
-        <li class="text-neutral-600">Home</li>
-        <li class="text-neutral-600">/</li>
-        <li class="text-neutral-800">Shop</li>
+        @for (item of items; track $index) {
+            <li>
+                @if (item.url) {
+                    <a [href]="item.url" class="text-neutral-600 hover:text-neutral-800">{{ item.label }}</a>
+                } @else {
+                    <span class="text-neutral-800">{{ item.label }}</span>
+                }
+            </li>
+            @if (!isLastItem($index)) {
+                <li class="text-neutral-600">/</li>
+            }
+        }
     </ul>
 </nav>

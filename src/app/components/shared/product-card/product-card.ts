@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 interface Product {
   id: number;
@@ -7,11 +8,12 @@ interface Product {
   price: number;
   image: string;
   description: string;
+  slug: string;
 }
 
 @Component({
   selector: 'app-product-card',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, RouterLink],
   templateUrl: './product-card.html',
   styleUrl: './product-card.css',
 })
@@ -21,6 +23,7 @@ export class ProductCard {
     name: '',
     price: 0,
     image: '',
-    description: ''
+    description: '',
+    slug: ''
   };
 }

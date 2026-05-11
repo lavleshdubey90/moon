@@ -17,6 +17,10 @@ export class Shop {
     priceRanges: new Set()
   };
   protected currentSort: string = 'name';
+  protected readonly breadcrumbItems = [
+    { label: 'Home', url: '/' },
+    { label: 'Shop' }
+  ];
 
   protected readonly products = [
     {
@@ -26,7 +30,8 @@ export class Shop {
       price: 8.99,
       image: '/images/products/product-1.png',
       category: 'Ceramic',
-      color: '#C69B7B'
+      color: '#C69B7B',
+      slug: 'small-ecru-ceramic-compote'
     },
     {
       id: 2,
@@ -35,7 +40,8 @@ export class Shop {
       price: 125.50,
       image: '/images/products/product-2.png',
       category: 'Decor Art',
-      color: '#FFFFFF'
+      color: '#FFFFFF',
+      slug: 'warrick-white-vase-14'
     },
     {
       id: 3,
@@ -44,7 +50,8 @@ export class Shop {
       price: 35.75,
       image: '/images/products/product-3.png',
       category: 'Dinnerware',
-      color: '#FFFFFF'
+      color: '#FFFFFF',
+      slug: 'porcelain-dinner-plate'
     },
     {
       id: 4,
@@ -53,7 +60,8 @@ export class Shop {
       price: 189.99,
       image: '/images/products/product-4.png',
       category: 'Decor Art',
-      color: '#FFFFFF'
+      color: '#FFFFFF',
+      slug: 'warrick-white-vase-20'
     },
     {
       id: 5,
@@ -62,7 +70,8 @@ export class Shop {
       price: 67.25,
       image: '/images/products/product-5.png',
       category: 'Decor Art',
-      color: '#CCD8CE'
+      color: '#CCD8CE',
+      slug: 'rounded-dual-handled-vase'
     },
     {
       id: 6,
@@ -71,7 +80,8 @@ export class Shop {
       price: 42.50,
       image: '/images/products/product-6.png',
       category: 'Dinnerware',
-      color: '#FFFFFF'
+      color: '#FFFFFF',
+      slug: 'marin-white-dinner-plate'
     },
     {
       id: 7,
@@ -80,7 +90,8 @@ export class Shop {
       price: 95.00,
       image: '/images/products/product-7.png',
       category: 'Ceramic',
-      color: '#C69B7B'
+      color: '#C69B7B',
+      slug: 'tall-cream-ceramic-vase'
     },
     {
       id: 8,
@@ -89,7 +100,8 @@ export class Shop {
       price: 250.00,
       image: '/images/products/product-8.png',
       category: 'Decor Art',
-      color: '#B4555D'
+      color: '#B4555D',
+      slug: 'luana-bowl'
     },
   ];
 
