@@ -1,10 +1,12 @@
 # 🏺 Moon Ceramic - Premium E-Commerce Website
 
 <div align="center">
-  <img src="public/favicon.ico" alt="Moon Ceramic Logo" width="80" height="80">
+  <img src="public/svgs/logo-colored-full.svg" alt="Moon Ceramic Logo" height="100" style="padding: 80px;">
 </div>
 
 A beautifully crafted e-commerce website for Moon Ceramic, showcasing premium ceramic furniture and home decor products. Built with modern Angular 21 and Tailwind CSS for a responsive, elegant shopping experience.
+
+**🔗 Repository:** [https://github.com/lavleshdubey90/moon.git](https://github.com/lavleshdubey90/moon.git)
 
 ## 🎨 Design
 
@@ -201,16 +203,9 @@ Complete checkout flow with:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## 🌟 Design Credit
 
-This project is licensed under the MIT License.
+The beautiful Figma UI design for this project was created by **Hong Nguyen Ngo** - A talented designer.
 
-## 📞 Contact
+- **Figma Profile**: [https://www.figma.com/@hongnguyenngo](https://www.figma.com/@hongnguyenngo)
 
-For questions or support, please reach out through the contact form on the website.
-
----
-
-<div align="center">
-  <sub>Built with ❤️ for Moon Ceramic</sub>
-</div>
