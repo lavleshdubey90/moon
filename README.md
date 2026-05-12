@@ -1,7 +1,15 @@
 # 🏺 Moon Ceramic - Premium E-Commerce Website
 
 <div align="center">
-  <img src="public/svgs/logo-colored-full.svg" alt="Moon Ceramic Logo" height="100" style="padding: 80px;">
+  <br><br><br>
+
+  <img
+    src="https://raw.githubusercontent.com/lavleshdubey90/moon/main/public/svgs/logo-colored-full.svg"
+    alt="Moon Ceramic Logo"
+    width="600"
+  />
+
+  <br><br><br><br>
 </div>
 
 A beautifully crafted e-commerce website for Moon Ceramic, showcasing premium ceramic furniture and home decor products. Built with modern Angular 21 and Tailwind CSS for a responsive, elegant shopping experience.
