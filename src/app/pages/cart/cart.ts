@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
 import { Breadcrumb } from '../../components/shared/breadcrumb/breadcrumb';
+import { RouterLink } from '@angular/router';
 
 interface CartItem {
   id: number;
@@ -14,7 +15,7 @@ interface CartItem {
 
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule, FormsModule, Breadcrumb, CurrencyPipe],
+  imports: [CommonModule, FormsModule, Breadcrumb, CurrencyPipe, RouterLink],
   templateUrl: './cart.html',
   styleUrl: './cart.css',
 })
@@ -80,9 +81,5 @@ export class Cart {
 
   updateCart(): void {
     console.log('Updating cart');
-  }
-
-  proceedToCheckout(): void {
-    console.log('Proceeding to checkout');
   }
 }

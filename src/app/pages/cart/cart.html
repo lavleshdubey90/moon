@@ -111,7 +111,7 @@
         </div>
 
         <!-- Cart Totals -->
-        <div class="bg-neutral-800 p-[20px] py-[30px] space-y-10 w-full max-w-lg self-end">
+        <div class="bg-neutral-800 p-[20px] py-[30px] space-y-10 w-full max-w-full md:max-w-lg self-end">
             <p class="display-5 font-semibold text-white">Cart totals</p>
             <div class="flex flex-col gap-5">
                 <div class="flex justify-between items-center">
@@ -125,10 +125,10 @@
                     </p>
                 </div>
             </div>
-            <button (click)="proceedToCheckout()"
-                class="bg-neutral-800 border border-white text-white px-4 py-3 w-full paragraph-default font-semibold uppercase tracking-wider cursor-pointer h-12">
+            <a routerLink="/checkout"
+                class="bg-neutral-800 border block text-center border-white text-white px-4 py-3 w-full paragraph-default font-semibold uppercase tracking-wider cursor-pointer h-12">
                 Proceed to checkout
-            </button>
+            </a>
         </div>
     </div>
 </section>

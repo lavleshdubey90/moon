@@ -3,7 +3,7 @@
         @for (item of items; track $index) {
             <li>
                 @if (item.url) {
-                    <a [href]="item.url" class="text-neutral-600 hover:text-neutral-800">{{ item.label }}</a>
+                    <a [routerLink]="[item.url]" class="text-neutral-600 hover:text-neutral-800">{{ item.label }}</a>
                 } @else {
                     <span class="text-neutral-800">{{ item.label }}</span>
                 }

@@ -1,1 +1,184 @@
-<p>checkout works!</p>
+<section class="container pb-20 pt-5">
+    <app-breadcrumb [items]="breadcrumbItems"></app-breadcrumb>
+
+    <div class="mt-12 flex flex-col lg:flex-row gap-10">
+        <!-- Billing Details Form -->
+        <div class="flex-1 flex flex-col gap-10">
+            <p class="display-5 font-semibold">Billing Details</p>
+
+            <form class="space-y-6">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex-1">
+                        <label class="block paragraph-default font-semibold text-neutral-800 mb-2">First Name *</label>
+                        <input type="text" [(ngModel)]="billingDetails.firstName" name="firstName" placeholder="Samatha"
+                            class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default" required>
+                    </div>
+                    <div class="flex-1">
+                        <label class="block paragraph-default font-semibold text-neutral-800 mb-2">Last Name *</label>
+                        <input type="text" [(ngModel)]="billingDetails.lastName" name="lastName" placeholder="Clarken"
+                            class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block paragraph-default font-semibold text-neutral-800 mb-2">Company Name
+                        (Optional)</label>
+                    <input type="text" [(ngModel)]="billingDetails.companyName" name="companyName" placeholder="Moon"
+                        class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default">
+                </div>
+
+                <div>
+                    <label class="block paragraph-default font-semibold text-neutral-800 mb-2">Country / Region
+                        *</label>
+                    <select [(ngModel)]="billingDetails.country" name="country"
+                        class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default bg-white"
+                        required>
+                        <option value="">Select a country</option>
+                        <option value="US">United States</option>
+                        <option value="VN">Vietnam</option>
+                        <option value="UK">United Kingdom</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block paragraph-default font-semibold text-neutral-800 mb-2">Street Address *</label>
+                    <input type="text" [(ngModel)]="billingDetails.streetAddress" name="streetAddress"
+                        placeholder="Address"
+                        class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default" required>
+                </div>
+
+                <!-- State and Town -->
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex-1">
+                        <label class="block paragraph-default font-semibold text-neutral-800 mb-2">Town / City *</label>
+                        <input type="text" [(ngModel)]="billingDetails.townCity" name="townCity" placeholder="City"
+                            class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default" required>
+                    </div>
+                    <div class="flex-1">
+                        <label class="block paragraph-default font-semibold text-neutral-800 mb-2">State *</label>
+                        <input type="text" [(ngModel)]="billingDetails.state" name="state" placeholder="State"
+                            class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default" required>
+                    </div>
+                </div>
+
+                <!-- Zip Code and Phone -->
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex-1">
+                        <label class="block paragraph-default font-semibold text-neutral-800 mb-2">Zip Code *</label>
+                        <input type="text" [(ngModel)]="billingDetails.zipCode" name="zipCode" placeholder="12345"
+                            class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default" required>
+                    </div>
+                    <div class="flex-1">
+                        <label class="block paragraph-default font-semibold text-neutral-800 mb-2">Phone *</label>
+                        <input type="tel" [(ngModel)]="billingDetails.phone" name="phone" placeholder="(123)456-7890"
+                            class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default" required>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    <div class="flex-1">
+                        <label class="block paragraph-default font-semibold text-neutral-800 mb-2">Email Address
+                        </label>
+                        <input type="email" [(ngModel)]="billingDetails.email" name="email"
+                            class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default">
+                    </div>
+
+                    <div class="flex-1">
+                        <label class="block paragraph-default font-semibold text-neutral-800 mb-2">Order Notes</label>
+                        <textarea [(ngModel)]="billingDetails.orderNotes" name="orderNotes"
+                            class="border border-neutral-800 px-4 py-3 w-full outline-none paragraph-default"
+                            rows="6"></textarea>
+                    </div>
+                </div>
+            </form>
+
+            <div class="flex justify-between sm:flex-row flex-col items-center gap-4">
+                <a routerLink="/cart" class="sm:max-w-60 max-w-full block w-full duration-300">
+                    <button class="btn-outline flex items-center gap-2 justify-center group">
+                        <img src="icons/chevron-left.svg" alt="chevron-left" class="group-hover:invert duration-500">
+                        <span>Return To Cart</span>
+                    </button>
+                </a>
+
+                <button class="btn flex items-center gap-2 justify-center group sm:max-w-60 max-w-full">
+                    <span>Continue to Shipping</span>
+                    <img src="icons/chevron-left.svg" alt="chevron-left" class="rotate-180 invert">
+                </button>
+            </div>
+        </div>
+
+
+        <div class="lg:w-[416px]">
+            <div class="flex flex-col gap-10">
+                <div class="flex justify-between pb-2 border-b border-neutral-400">
+                    <p class="display-5 font-semibold">Product</p>
+                    <p class="display-5 font-semibold">Subtotal</p>
+                </div>
+                <div class="space-y-2">
+                    @for (item of cartItems; track item.id) {
+                    <div class="flex justify-between">
+                        <p class="paragraph-default">{{ item.name }}</p>
+                        <p class="paragraph-default">{{ item.price | currency }}</p>
+                    </div>
+                    }
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between">
+                        <p class="paragraph-default font-semibold">Subtotal</p>
+                        <p class="paragraph-default font-semibold">{{ subtotal | currency }}</p>
+                    </div>
+                    <div class="flex justify-between">
+                        <p class="paragraph-default font-semibold">Shipping</p>
+                        <p class="paragraph-default font-semibold">{{ shipping | currency }}</p>
+                    </div>
+                </div>
+                <div class="flex justify-between pt-2 border-t border-neutral-400">
+                    <p class="display-5 font-semibold">Total</p>
+                    <p class="display-5 font-semibold">{{ total | currency }}</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-warm-black p-7 text-neutral-100">
+                <p class="display-5 font-semibold">Payment</p>
+
+                <div class="my-5">
+                    <div class="py-5">
+                        <label for="credit-card" class="flex items-center justify-between cursor-pointer">
+                            <div class="flex items-center gap-2">
+                                <input type="radio" id="credit-card" class="size-5 accent-neutral-100">
+                                <span class="paragraph-default">Credit Card</span>
+                            </div>
+                            <img id="credit-card" src="icons/payment-cards.svg" alt="payment-cards" class="h-6">
+                        </label>
+                    </div>
+
+                    <form class="py-5 space-y-5">
+                        <input type="text" placeholder="Card Number"
+                            class="w-full p-3 border border-neutral-200 focus:outline-none">
+                        <input type="text" placeholder="Card Holder Name"
+                            class="w-full p-3 border border-neutral-200 focus:outline-none">
+
+                        <div class="grid grid-cols-2 gap-5">
+                            <input type="text" placeholder="Expiry Date"
+                                class="w-full p-3 border border-neutral-200 focus:outline-none">
+                            <input type="text" placeholder="CVV"
+                                class="w-full p-3 border border-neutral-200 focus:outline-none">
+                        </div>
+                    </form>
+
+                    <label for="paypal" class="flex items-center justify-between cursor-pointer py-5">
+                        <div class="flex items-center gap-2">
+                            <input type="radio" id="paypal" class="size-5 accent-neutral-100">
+                            <img src="icons/paypal.svg" alt="paypal" class="h-6">
+                        </div>
+                    </label>
+                </div>
+
+                <button class="btn-outline border-neutral-100 h-12">
+                    Place Order
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
