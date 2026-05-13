@@ -22,7 +22,7 @@ A beautifully crafted e-commerce website for Moon Ceramic, showcasing premium ce
 
 ## 🌐 Live Demo
 
-[**View Live Site**](https://localhost:4200/) - Running locally with `ng serve`
+[**View Live Site**](https://moon-9mu3.vercel.app/)
 
 ## 📸 Preview
 
